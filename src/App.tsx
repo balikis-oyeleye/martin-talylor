@@ -1,4 +1,5 @@
 import Experience from "./components/experience";
+import Footer from "./components/footer";
 import Hero from "./components/hero";
 import MediaSlider from "./components/media-slider";
 import Navbar from "./components/navbar";
@@ -15,6 +16,7 @@ const App = () => {
         <TextSlider />
         <WhatIDo />
         <MediaSlider />
+        <Footer />
       </main>
     </>
   );

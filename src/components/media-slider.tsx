@@ -23,7 +23,7 @@ const MediaSlider = () => {
   ];
 
   return (
-    <section className="mx-auto pt-36 pb-40">
+    <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
       <div className="w-full -rotate-1 py-8">
         <ul className="flex items-center gap-8 overflow-x-auto">
           {media.map((item) => (
