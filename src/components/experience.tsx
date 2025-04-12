@@ -31,7 +31,7 @@ const Experience = () => {
     <section className="container mx-auto p-4 sm:p-0">
       <h2 className="text-3xl font-bold text-secondary py-6">Experience</h2>
       <div className="bg-secondary w-full h-0.5 md:h-1 rounded-lg mb-9" />
-      <div className="flex gap-12 flex-col md:flex-row">
+      <div className="flex gap-12 lg:gap-36 flex-col md:flex-row">
         <p className="text-secondary max-w-[300px]">
           I've worked with companies and clients, both in agency settings and as
           a freelancer. I enjoy collaborating with clients who appreciate the
