@@ -14,18 +14,18 @@ const TextSlider = () => {
   ];
 
   return (
-    <section className=" mx-auto pt-36 pb-40 max-w-[1536px]">
+    <section className="mx-auto pt-36 pb-40">
       <div className="bg-[#38302b] w-full -rotate-1 py-8">
-        <div className="flex items-center gap-16 md:gap-24 overflow-x-auto">
+        <ul className="flex items-center gap-16 md:gap-24 overflow-x-auto">
           {text.map((item) => (
-            <p
+            <li
               key={item}
               className="text-secondary text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap"
             >
               {item}
-            </p>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
