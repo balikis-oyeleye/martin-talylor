@@ -14,7 +14,7 @@ const TextSlider = () => {
   ];
 
   return (
-    <section className="mx-auto pt-36 pb-40">
+    <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
       <div className="bg-[#38302b] w-full -rotate-1 py-8">
         <ul className="flex items-center gap-16 md:gap-24 overflow-x-hidden">
           {text.map((item) => (

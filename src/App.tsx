@@ -5,10 +5,14 @@ import MediaSlider from "./components/media-slider";
 import Navbar from "./components/navbar";
 import TextSlider from "./components/text-slider";
 import WhatIDo from "./components/what-i-do";
+import { Preloader } from "./components/preloader"; // import the preloader
+import Cursor from "./components/cursor";
 
 const App = () => {
   return (
     <>
+      <Preloader />;
+      <Cursor />
       <Navbar />
       <main className="bg-primary h-full">
         <Hero />
