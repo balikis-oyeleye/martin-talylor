@@ -4,7 +4,7 @@ const variants = {
   initial: { y: 0 },
   animate: {
     y: "-100%",
-    transition: { duration: 1.5, ease: "easeInOut" },
+    transition: { duration: 1, ease: "easeInOut" },
   },
 };
 
