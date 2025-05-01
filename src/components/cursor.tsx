@@ -42,9 +42,7 @@ const Cursor = () => {
     const handleLeave = () => scale.set(1);
 
     const addListeners = () => {
-      const targets = document.querySelectorAll(
-        "a, button, .magnetic, svg, path"
-      );
+      const targets = document.querySelectorAll("a, button, .magnetic");
 
       targets.forEach((el) => {
         el.addEventListener("mouseenter", handleEnter);
