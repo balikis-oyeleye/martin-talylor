@@ -40,7 +40,7 @@ const Cursor = () => {
   useEffect(() => {
     const targets = document.querySelectorAll("a, button, .magnetic");
 
-    const handleEnter = () => scale.set(2.5);
+    const handleEnter = () => scale.set(3);
     const handleLeave = () => scale.set(1);
 
     targets.forEach((el) => {
