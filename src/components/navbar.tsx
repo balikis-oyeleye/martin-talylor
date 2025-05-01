@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-tertiary text-secondary p-4 md:p-6 fixed top-0 w-full z-10 ">
+    <header className="bg-tertiary text-secondary p-4 md:p-6 fixed top-0 w-full z-20">
       <div className="container mx-auto flex justify-between items-center">
         <a href="/">
           <p className="text-lg">Martin Taylor</p>

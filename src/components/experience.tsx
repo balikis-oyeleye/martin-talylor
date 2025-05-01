@@ -1,4 +1,12 @@
-import { motion, Variants } from "motion/react";
+import { motion } from "motion/react";
+import {
+  childVariants,
+  containerVariants,
+  itemVariants,
+  lineVariants,
+  listVariants,
+  textVariants,
+} from "../lib/animations";
 
 const Experience = () => {
   const experience = [
@@ -28,54 +36,6 @@ const Experience = () => {
       date: "2016 - 2017",
     },
   ];
-
-  const containerVariants: Variants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
-
-  const childVariants: Variants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const lineVariants: Variants = {
-    hidden: { width: "40%" },
-    visible: {
-      width: "100%",
-      transition: {
-        ease: "easeInOut",
-        duration: 1,
-      },
-    },
-  };
-
-  const textVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5, delay: 0.4 } },
-  };
-
-  const listVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
 
   return (
     <motion.section

@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform, Variants } from "motion/react";
-import { BsAsterisk } from "react-icons/bs";
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
@@ -41,10 +40,18 @@ const Hero = () => {
             variants={childVariants}
           >
             Hello! I'm Martin
-            <BsAsterisk
-              color="#ffffcf"
-              className="absolute -top-0.5 -right-6 md:-right-10 size-4 sm:size-6 lg:size-10"
-            />
+            <svg
+              className="absolute -top-0.5 -right-6 md:-right-10 size-4 sm:size-6 lg:size-9"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g stroke="#ffffcf" stroke-width="4">
+                <line x1="50" y1="10" x2="50" y2="90" />
+                <line x1="10" y1="50" x2="90" y2="50" />
+                <line x1="20" y1="20" x2="80" y2="80" />
+                <line x1="80" y1="20" x2="20" y2="80" />
+              </g>
+            </svg>
           </motion.h1>
         </motion.div>
 

@@ -1,3 +1,13 @@
+import { motion } from "motion/react";
+import {
+  childVariants,
+  containerVariants,
+  itemVariants,
+  lineVariants,
+  listVariants,
+  textVariants,
+} from "../lib/animations";
+
 const WhatIDo = () => {
   const services = [
     {
@@ -20,18 +30,47 @@ const WhatIDo = () => {
   ];
 
   return (
-    <section className="container mx-auto p-4 sm:p-0">
-      <h2 className="text-3xl font-bold text-secondary py-6">What I Do</h2>
-      <div className="bg-secondary w-full h-0.5 md:h-1 rounded-lg mb-9" />
+    <motion.section
+      className="container mx-auto p-4 sm:p-0"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <div>
+        <motion.h2
+          className="text-3xl font-bold text-secondary py-6"
+          variants={childVariants}
+        >
+          What I Do
+        </motion.h2>
+      </div>
+      <motion.div
+        className="bg-secondary h-0.5 rounded-lg mb-9"
+        variants={lineVariants}
+      />
       <div className="flex gap-12 lg:gap-36 flex-col md:flex-row">
-        <p className="text-secondary max-w-[300px] md:text-xl text-lg">
+        <motion.p
+          className="text-secondary max-w-[300px] md:text-xl text-lg"
+          variants={textVariants}
+        >
           I am dedicated to expanding my knowledge and expertise in my field.
           Throughout my career, I've acquired various skills, which I continue
           to perfect.
-        </p>
-        <ul className="grid grid-cols-2 md:gap-8 gap-4">
+        </motion.p>
+        <motion.ul
+          className="grid grid-cols-2 md:gap-8 gap-4 overflow-hidden"
+          variants={listVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+        >
           {services.map((service, index) => (
-            <li key={service.title} className="space-y-4">
+            <motion.li
+              key={service.title}
+              className="space-y-4"
+              variants={itemVariants}
+            >
               <span className="text-2xl md:text-3xl font-bold text-white/30">
                 0{index + 1}
               </span>
@@ -41,11 +80,11 @@ const WhatIDo = () => {
               <p className="md:text-lg text-base font-medium text-secondary">
                 {service.description}
               </p>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

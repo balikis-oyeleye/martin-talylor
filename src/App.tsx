@@ -7,6 +7,7 @@ import TextSlider from "./components/text-slider";
 import WhatIDo from "./components/what-i-do";
 import { Preloader } from "./components/preloader"; // import the preloader
 import Cursor from "./components/cursor";
+import { IoMdArrowUp } from "react-icons/io";
 
 const App = () => {
   return (
@@ -14,14 +15,19 @@ const App = () => {
       <Preloader />;
       <Cursor />
       <Navbar />
-      <main className="bg-primary h-full">
-        <Hero />
-        <Experience />
-        <TextSlider />
-        <WhatIDo />
-        <MediaSlider />
+      <div className="bg-primary h-full">
+        <main className="relative z-10 bg-primary mb-72">
+          <Hero />
+          <Experience />
+          <TextSlider />
+          <WhatIDo />
+          <MediaSlider />
+        </main>
         <Footer />
-      </main>
+      </div>
+      <button className="flex items-center text-secondary gap-2 md:text-xl text-base font-medium self-end cursor-pointer fixed bottom-4 right-4">
+        <span>Back To Top</span> <IoMdArrowUp />
+      </button>
     </>
   );
 };
