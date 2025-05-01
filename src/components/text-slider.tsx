@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const TextSlider = () => {
-  const text = [
+  const text = [ 
     "Turkish Coffee",
     "Bali",
     "No-code Tools",

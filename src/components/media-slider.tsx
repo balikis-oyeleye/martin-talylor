@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const MediaSlider = () => {
   const media = [
     {
@@ -25,8 +27,18 @@ const MediaSlider = () => {
   return (
     <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
       <div className="w-full py-8">
-        <ul className="flex items-center gap-8 overflow-x-auto">
-          {media.map((item) => (
+        <motion.ul
+          className="flex items-center gap-8"
+          initial={{ x: "0%" }}
+          animate={{ x: "-100%" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          }}
+        >
+          {[...media, ...media].map((item) => (
             <li
               key={item.src}
               className="w-[600px] h-[400px] relative flex-shrink-0"
@@ -51,7 +63,7 @@ const MediaSlider = () => {
               </div>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </section>
   );
