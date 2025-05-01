@@ -38,21 +38,44 @@ const Cursor = () => {
 
   // Hover interactions for links/buttons
   useEffect(() => {
-    const targets = document.querySelectorAll("a, button, .magnetic");
-
     const handleEnter = () => scale.set(3);
     const handleLeave = () => scale.set(1);
 
-    targets.forEach((el) => {
-      el.addEventListener("mouseenter", handleEnter);
-      el.addEventListener("mouseleave", handleLeave);
+    const addListeners = () => {
+      const targets = document.querySelectorAll(
+        "a, button, .magnetic, svg, path"
+      );
+
+      targets.forEach((el) => {
+        el.addEventListener("mouseenter", handleEnter);
+        el.addEventListener("mouseleave", handleLeave);
+      });
+
+      return () => {
+        targets.forEach((el) => {
+          el.removeEventListener("mouseenter", handleEnter);
+          el.removeEventListener("mouseleave", handleLeave);
+        });
+      };
+    };
+
+    // Initial listener setup
+    let cleanup = addListeners();
+
+    // Watch for future DOM mutations
+    const observer = new MutationObserver(() => {
+      cleanup();
+      cleanup = addListeners();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
     });
 
     return () => {
-      targets.forEach((el) => {
-        el.removeEventListener("mouseenter", handleEnter);
-        el.removeEventListener("mouseleave", handleLeave);
-      });
+      observer.disconnect();
+      cleanup();
     };
   }, [scale]);
 
