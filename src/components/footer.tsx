@@ -1,5 +1,6 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
+import { IoMdArrowUp } from "react-icons/io";
 
 const Footer = () => {
   const links = [
@@ -21,9 +22,13 @@ const Footer = () => {
     },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="container mx-auto p-4 sm:p-2 sticky bottom-0 min-h-screen">
-      <div className="overflow-x-hidden flex flex-col justify-end pb-6">
+    <footer className="container mx-auto p-4 sm:p-2 sticky bottom-0">
+      <div className="overflow-x-hidden flex flex-col justify-end pb-4">
         {/* main */}
         <div>
           <div className="overflow-hidden w-full">
@@ -70,7 +75,7 @@ const Footer = () => {
               digital designer. I’d love to talk about the next big thing!
             </p>
           </div>
-          <div className="flex justify-between items-center  mt-8 md:mt-20 flex-col md:flex-row gap-2 md:gap-8 mb-6">
+          <div className="flex justify-between items-center mt-8 md:mt-20 flex-col md:flex-row md:gap-8 gap-3">
             <a
               href="mailto:oyeleyebal@gmail.com"
               className="flex items-center text-secondary gap-2 md:text-xl text-base font-medium"
@@ -78,8 +83,14 @@ const Footer = () => {
               oyeleyebal@gmail.com
             </a>
             <p className="flex items-center text-secondary gap-2 md:text-xl text-base font-medium text-center">
-              @ Develop by Balikis✨
+              @Develop by Balikis✨
             </p>
+            <button
+              className="flex items-center text-secondary gap-2 md:text-xl text-base font-medium cursor-pointer"
+              onClick={scrollToTop}
+            >
+              <span>Back To Top</span> <IoMdArrowUp />
+            </button>
           </div>
         </div>
       </div>
