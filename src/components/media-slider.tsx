@@ -38,9 +38,9 @@ const MediaSlider = () => {
             ease: "linear",
           }}
         >
-          {[...media, ...media].map((item) => (
+          {[...media, ...media].map((item, index) => (
             <li
-              key={item.src}
+              key={index}
               className="w-[600px] h-[400px] relative flex-shrink-0"
             >
               <div className="absolute inset-0">
