@@ -1,8 +1,11 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { BiX } from "react-icons/bi";
+import { useHideOnScroll } from "../hooks/hide-on-scroll";
 
 const Navbar = () => {
+  const show = useHideOnScroll();
+
   const NAV_LINKS = ["home", "about", "services", "portfolio", "contact"];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +35,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-tertiary text-secondary p-4 md:p-6 fixed top-0 w-full z-20">
+    <header
+      className={`bg-tertiary text-secondary p-4 md:p-6 fixed top-0 w-full z-20 transition-transform duration-300 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <a href="/">
           <p className="text-lg">Martin Taylor</p>
