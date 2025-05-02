@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const TextSlider = () => {
-  const text = [ 
+  const text = [
     "Turkish Coffee",
     "Bali",
     "No-code Tools",
@@ -17,7 +17,7 @@ const TextSlider = () => {
 
   return (
     <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
-      <div className="bg-[#38302b] w-full py-8 -rotate-1">
+      <div className="bg-[#2d241f] w-full py-8 -rotate-1">
         <motion.ul
           className="flex items-center gap-16 md:gap-24"
           initial={{ x: "0%" }}
@@ -33,7 +33,7 @@ const TextSlider = () => {
           {[...text, ...text].map((item, index) => (
             <li
               key={index}
-              className="text-secondary text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap"
+              className="text-[#777760] text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap"
             >
               {item}
             </li>

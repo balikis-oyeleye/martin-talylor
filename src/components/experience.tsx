@@ -39,7 +39,7 @@ const Experience = () => {
 
   return (
     <motion.section
-      className="container mx-auto p-4 sm:p-0"
+      className="container mx-auto p-4 sm:p-2"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

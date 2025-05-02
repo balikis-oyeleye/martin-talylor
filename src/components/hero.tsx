@@ -76,12 +76,12 @@ const Hero = () => {
           </motion.h1>
         </motion.div>
 
-        <div className="flex items-center sm:items-end lg:items-center flex-col md:flex-row-reverse gap-3 md:gap-8">
+        <div className="flex items-center flex-col md:flex-row-reverse gap-3 md:gap-8">
           <div
             className="overflow-hidden pb-2"
             onMouseMove={(e) => {
               imagePos.x.set(e.nativeEvent.offsetX);
-              imagePos.y.set(e.nativeEvent.offsetY - 50);
+              imagePos.y.set(e.nativeEvent.offsetY);
             }}
           >
             <motion.h1

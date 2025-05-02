@@ -49,6 +49,7 @@ const MediaSlider = () => {
                     src={item.src}
                     alt={item.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 ) : (
                   <video
