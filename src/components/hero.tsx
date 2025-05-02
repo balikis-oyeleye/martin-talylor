@@ -1,7 +1,18 @@
-import { motion, useScroll, useTransform, Variants } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  Variants,
+} from "motion/react";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const { scrollYProgress } = useScroll();
+
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -19,6 +30,16 @@ const Hero = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const negativeX = useTransform(x, (latestX) => -latestX);
+
+  const spring = {
+    stiffness: 150,
+    damping: 15,
+    mass: 0.1,
+  };
+  const imagePos = {
+    x: useSpring(0, spring),
+    y: useSpring(0, spring),
+  };
 
   return (
     <section className="min-h-screen  text-secondary py-24 container mx-auto px-2 flex flex-col justify-center items-center">
@@ -55,14 +76,43 @@ const Hero = () => {
           </motion.h1>
         </motion.div>
 
-        <div className="flex items-center sm:items-end lg:items-center flex-col md:flex-row-reverse gap-3 md:gap-8 ">
-          <div className="overflow-hidden pb-2">
+        <div className="flex items-center sm:items-end lg:items-center flex-col md:flex-row-reverse gap-3 md:gap-8">
+          <div
+            className="overflow-hidden pb-2"
+            onMouseMove={(e) => {
+              imagePos.x.set(e.nativeEvent.offsetX);
+              imagePos.y.set(e.nativeEvent.offsetY - 50);
+            }}
+          >
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-[110px] font-bold"
+              className="text-4xl sm:text-5xl lg:text-[110px] font-bold cursor-default"
               variants={childVariants}
+              onHoverStart={() => setIsHovered(true)}
+              onHoverEnd={() => setIsHovered(false)}
             >
               A designer
             </motion.h1>
+            {
+              <AnimatePresence>
+                {isHovered && (
+                  <motion.img
+                    src="/image/man.jpg"
+                    alt="Martin Taylor"
+                    className="pointer-events-none fixed z-50 size-36 md:size-48 lg:size-96 object-cover rounded-lg"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    style={{
+                      x: imagePos.x,
+                      y: imagePos.y,
+                      translateX: "-50%",
+                      translateY: "-50%",
+                    }}
+                  />
+                )}
+              </AnimatePresence>
+            }
           </div>
           <div className="overflow-hidden">
             <motion.p
