@@ -31,10 +31,10 @@ const Footer = () => {
       <div className="overflow-x-hidden flex flex-col justify-end pb-4">
         {/* main */}
         <div>
-          <div className="overflow-hidden w-full">
+          <div className="overflow-hidden w-full mb-1">
             <motion.div
-              className="flex w-max gap-28"
-              initial={{ x: 0 }}
+              className="flex w-max gap-28 flex-nowrap pr-28 will-change-transform"
+              initial={{ x: "0%" }}
               animate={{ x: "-50%" }}
               transition={{
                 repeat: Infinity,
@@ -46,15 +46,15 @@ const Footer = () => {
               {[...Array(2)].map((_, i) => (
                 <h2
                   key={i}
-                  className="text-[120px] md:text-[220px] font-semibold whitespace-nowrap text-secondary mb-0 md:mb-14"
+                  className="text-[120px] md:text-[220px] font-semibold whitespace-nowrap text-secondary mb-0 md:mb-14 leading-none"
                 >
-                  Let's work together
+                  Let&apos;s work together
                 </h2>
               ))}
             </motion.div>
           </div>
 
-          <div className="flex justify-center md:justify-between items-center flex-col md:flex-row gap-8 ">
+          <div className="flex justify-center md:justify-between items-center flex-col md:flex-row gap-8">
             <ul className="space-y-4">
               {links.map((item) => (
                 <li key={item.social}>

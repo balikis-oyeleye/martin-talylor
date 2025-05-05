@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const MediaSlider = () => {
   const media = [
     {
-      src: "/image/guy.png",
+      src: "/image/guy.webp",
       type: "image",
       name: "Martin Taylor",
     },
@@ -26,22 +26,22 @@ const MediaSlider = () => {
 
   return (
     <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
-      <div className="w-full py-8">
-        <motion.ul
-          className="flex items-center gap-8"
-          initial={{ x: "0%" }}
-          animate={{ x: "-100%" }}
+      <div className="w-full py-8 relative">
+        <motion.div
+          className="flex gap-8 w-max will-change-transform pr-8"
+          initial={{ x: 0 }}
+          animate={{ x: "-50%" }}
           transition={{
             repeat: Infinity,
             repeatType: "loop",
-            duration: 20,
+            duration: 15,
             ease: "linear",
           }}
         >
           {[...media, ...media].map((item, index) => (
-            <li
+            <div
               key={index}
-              className="w-[600px] h-[400px] relative flex-shrink-0"
+              className="md:w-[600px] md:h-[400px] w-[300px] h-[200px] relative flex-shrink-0"
             >
               <div className="absolute inset-0">
                 {item.type === "image" ? (
@@ -62,9 +62,9 @@ const MediaSlider = () => {
                   />
                 )}
               </div>
-            </li>
+            </div>
           ))}
-        </motion.ul>
+        </motion.div>
       </div>
     </section>
   );

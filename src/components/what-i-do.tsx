@@ -35,9 +35,9 @@ const WhatIDo = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.8 }}
+      viewport={{ once: true, amount: 0.7 }}
     >
-      <div>
+      <div className="overflow-hidden">
         <motion.h2
           className="text-3xl font-bold text-secondary py-6"
           variants={childVariants}
