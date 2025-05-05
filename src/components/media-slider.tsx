@@ -25,7 +25,7 @@ const MediaSlider = () => {
   ];
 
   return (
-    <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
+    <section className="mx-auto pt-36 pb-40 overflow-x-hidden container">
       <div className="w-full py-8 relative">
         <motion.div
           className="flex gap-8 w-max will-change-transform pr-8"

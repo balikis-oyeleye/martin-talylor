@@ -16,7 +16,7 @@ const TextSlider = () => {
   ];
 
   return (
-    <section className="mx-auto pt-36 pb-40 overflow-x-hidden">
+    <section className="mx-auto pt-36 pb-40 overflow-x-hidden container ">
       <div className="bg-[#2d241f] w-full py-8 -rotate-1">
         <motion.div
           className="flex items-center gap-16 md:gap-24 w-max will-change-transform pr-16"
