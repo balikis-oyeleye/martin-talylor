@@ -96,7 +96,7 @@ const Hero = () => {
               <AnimatePresence>
                 {isHovered && (
                   <motion.img
-                    src="/image/man.jpg"
+                    src="/image/man.webp"
                     alt="Martin Taylor"
                     className="pointer-events-none fixed z-50 size-36 md:size-48 lg:size-96 object-cover rounded-lg"
                     initial={{ opacity: 0, scale: 0.8 }}

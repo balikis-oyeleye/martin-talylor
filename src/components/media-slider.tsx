@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const MediaSlider = () => {
   const media = [
     {
-      src: "/image/guy.avif",
+      src: "/image/guy.png",
       type: "image",
       name: "Martin Taylor",
     },
