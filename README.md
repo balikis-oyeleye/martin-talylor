@@ -5,7 +5,7 @@
 
 ## 📸 Preview
 
-![Portfolio Preview](/public/image/image.png)
+![Portfolio Preview](/public/image/image.webp)
 
 ## ✨ Features
 
